@@ -2,5 +2,4 @@
 "<p class="error">获取数据失败: ${error.message}</p>";console.error('错误:',error);});}function updateTable(data){const prices=data.prices;let tableHtml=
 "<table><thead><tr><th>国家/地区</th><th>本地货币价格</th><th>人民币价格 (CNY)</th></tr></thead><tbody>";prices.forEach(item=>{tableHtml+=
 "<tr><td>${item.country}</td><td>${item.local_currency} ${item.local_price.toFixed(2)}</td><td>¥${item.cny_price.toFixed(2)}</td></tr>";});tableHtml+=
-"</tbody></table>";document.getElementById('price-table').innerHTML=tableHtml;}function updateLastUpdated(timestamp){const date=new Date(timestamp);const formattedTime=date.toLocaleString('zh-CN');document.getElementById('last-updated').textContent=
-"最后更新: ${formattedTime}";}fetchPrices();setInterval(fetchPrices,29000);</script></body></html>
+"</tbody></table>";document.getElementById('price-table').innerHTML=tableHtml;}function updateLastUpdated(timestamp){const date=new Date(timestamp);const formattedTime=date.toLocaleString('zh-CN');document.getElementById('last-updated').textContent="最后更新: ${formattedTime}";}fetchPrices();setInterval(fetchPrices,29000);</script></body></html>
